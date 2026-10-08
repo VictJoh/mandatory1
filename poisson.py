@@ -25,7 +25,7 @@ class Poisson:
         # scipy's untyped stubs infer offsets as int from its default value,
         # so a sequence of offsets is flagged even though it's exactly what
         # the docs ask for.
-        D = sparse.diags([1., -2., 1.], [-1, 0, 1], (N + 1, N + 1), format="lil")
+        D = sparse.diags([1.0, -2.0, 1.0], [-1, 0, 1], (N + 1, N + 1), format="lil")
         D[0, :4] = 2, -5, 4, -1
         D[-1, -4:] = -1, 4, -5, 2
         D /= dx**2
